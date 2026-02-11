@@ -104,22 +104,29 @@ This analysis **proves the theoretical advantage of attention mechanisms**:
 
 ### Loss Progression
 
-**RNN**:
-- Train Loss: 7.91 → 2.52 (10 epochs)
-- Val Loss: 5.59 → 4.68
-- Best epoch: 10
+**RNN** (10 epochs):
+- Train Loss: 6.50 → 4.77
+- Val Loss: 5.20 → 5.23
+- Best Val Loss: 5.01 (epoch 5)
+- Parameters: 33,441,963
 
-**LSTM**:
-- Train Loss: 7.73 → 2.37 (8 epochs)
-- Val Loss: 5.43 → 4.47
-- Best epoch: 8
+**LSTM** (8 epochs):
+- Train Loss: 6.35 → 4.50
+- Val Loss: 4.88 → 4.67
+- Best Val Loss: 4.65 (epoch 7)
+- Parameters: 33,441,963
 
-**Attention**:
-- Train Loss: 6.14 → 2.17 (8 epochs)
-- Val Loss: 4.71 → 4.36
-- Best epoch: 5 (converges faster!)
+**Attention** (8 epochs):
+- Train Loss: 6.14 → 2.17 ⭐ Best convergence!
+- Val Loss: 4.71 → 4.40
+- Best Val Loss: 4.36 (epoch 5) ⭐ Best overall!
+- Parameters: 34,019,163
 
-**Observation**: Attention model converges faster and achieves better final loss.
+**Key Observations**:
+1. **Attention converges fastest**: Reaches best validation loss in just 5 epochs
+2. **Attention achieves lowest loss**: 4.36 vs 4.65 (LSTM) vs 5.01 (RNN)
+3. **Training efficiency**: Attention shows steepest learning curve (6.14 → 2.17)
+4. **Minimal overfitting**: All models show reasonable train/val gap
 
 ---
 

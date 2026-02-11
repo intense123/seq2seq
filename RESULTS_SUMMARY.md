@@ -30,20 +30,20 @@ This project successfully trained and evaluated three Seq2Seq models for Python 
 
 ### Loss Progression
 
-**RNN Seq2Seq**:
-- Train Loss: 7.91 → 2.52
-- Val Loss: 5.59 → 4.68
-- Best epoch: 10
+**RNN Seq2Seq** (10 epochs):
+- Train Loss: 6.50 → 4.77
+- Val Loss: 5.20 → 5.23
+- Best Val Loss: 5.01 (epoch 5)
 
-**LSTM Seq2Seq**:
-- Train Loss: 7.73 → 2.37
-- Val Loss: 5.43 → 4.47
-- Best epoch: 8
+**LSTM Seq2Seq** (8 epochs):
+- Train Loss: 6.35 → 4.50
+- Val Loss: 4.88 → 4.67
+- Best Val Loss: 4.65 (epoch 7)
 
-**LSTM with Attention**:
+**LSTM with Attention** (8 epochs):
 - Train Loss: 6.14 → 2.17
-- Val Loss: 4.71 → 4.36
-- Best epoch: 5 (converges faster!)
+- Val Loss: 4.71 → 4.40
+- Best Val Loss: 4.36 (epoch 5) ⭐ Best overall!
 
 ---
 
