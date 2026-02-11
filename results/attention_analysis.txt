@@ -1,0 +1,479 @@
+ATTENTION ANALYSIS
+================================================================================
+
+EXAMPLE 1
+================================================================================
+
+Docstring: Compare if two nodes are equal.
+
+Reference Code: def cmp_ast(node1, node2):
+    '''
+    Compare if two nodes are equal.
+    '''
+
+    if type(node1) != type(node2):
+        return False
+
+    if isinstance(node1, (list, tuple)):
+        if len(node1) != len(node2):
+            return False
+
+        for left, right in zip(node1, node2):
+            if not cmp_ast(left, right):
+                return False
+
+    elif isinstance(node1, ast.AST):
+        for field in node1._fields:
+            left = getattr(node1, field, Undedined)
+            right = getattr(node2, field, Undedined)
+
+            if not cmp_ast(left, right):
+                return False
+    else:
+        return node1 == node2
+
+    return True
+
+Generated Code: def <unk> """ if two if two are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are are <unk> are <unk> are are are <unk> are are are are are <unk> are are are are are are are are are are are <unk> are are are are are are are are are are are are are <unk> are are are are are are are are are are are
+
+Source tokens: ['compare', 'if', 'two', 'nodes', 'are', 'equal.']
+
+Target tokens: ['def', '<unk>', '"""', 'if', 'two', 'if', 'two', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', '<unk>', 'are', '<unk>', 'are', 'are', 'are', '<unk>', 'are', 'are', 'are', 'are', 'are', '<unk>', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', '<unk>', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', '<unk>', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are', 'are']
+
+Attention Pattern Analysis:
+------------------------------------------------------------
+
+Target token 'def' attends most to:
+  - 'nodes': 0.476
+  - 'two': 0.234
+  - 'if': 0.129
+
+Target token '<unk>' attends most to:
+  - 'if': 0.940
+  - 'two': 0.046
+  - 'nodes': 0.010
+
+Target token '"""' attends most to:
+  - 'if': 0.982
+  - 'two': 0.009
+  - 'compare': 0.008
+
+Target token 'if' attends most to:
+  - 'if': 0.992
+  - 'compare': 0.004
+  - 'two': 0.003
+
+Target token 'two' attends most to:
+  - 'if': 0.973
+  - 'two': 0.014
+  - 'compare': 0.011
+
+Target token 'if' attends most to:
+  - 'if': 0.641
+  - 'two': 0.318
+  - 'nodes': 0.027
+
+Target token 'two' attends most to:
+  - 'two': 0.569
+  - 'nodes': 0.255
+  - 'if': 0.155
+
+Target token 'are' attends most to:
+  - 'nodes': 0.768
+  - 'two': 0.162
+  - 'are': 0.059
+
+Target token 'are' attends most to:
+  - 'are': 0.702
+  - 'nodes': 0.260
+  - 'equal.': 0.025
+
+Target token 'are' attends most to:
+  - 'are': 0.883
+  - 'nodes': 0.057
+  - 'equal.': 0.056
+
+------------------------------------------------------------
+Most important source tokens overall:
+  - 'nodes': 0.351
+  - 'are': 0.296
+  - 'equal.': 0.120
+  - 'two': 0.120
+  - 'if': 0.076
+
+================================================================================
+
+EXAMPLE 2
+================================================================================
+
+Docstring: Returns CustomModels for models with a custom `__implementation__`
+
+Reference Code: def _get_custom_models(models):
+    """Returns CustomModels for models with a custom `__implementation__`"""
+    if models is None:
+        models = Model.model_class_reverse_map.values()
+
+    custom_models = OrderedDict()
+    for cls in models:
+        impl = getattr(cls, "__implementation__", None)
+
+        if impl is not None:
+            model = CustomModel(cls)
+            custom_models[model.full_name] = model
+
+    if not custom_models:
+        return None
+    return custom_models
+
+Generated Code: def <unk> <unk> <unk> <unk> <unk> <unk> with a <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Source tokens: ['returns', '<unk>', 'for', 'models', 'with', 'a', 'custom', '<unk>']
+
+Target tokens: ['def', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', 'with', 'a', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>']
+
+Attention Pattern Analysis:
+------------------------------------------------------------
+
+Target token 'def' attends most to:
+  - 'a': 0.647
+  - 'with': 0.319
+  - 'for': 0.018
+
+Target token '<unk>' attends most to:
+  - 'a': 0.744
+  - 'with': 0.226
+  - 'for': 0.025
+
+Target token '<unk>' attends most to:
+  - 'for': 0.425
+  - 'with': 0.329
+  - 'a': 0.186
+
+Target token '<unk>' attends most to:
+  - 'for': 0.958
+  - 'models': 0.027
+  - 'returns': 0.010
+
+Target token '<unk>' attends most to:
+  - 'for': 0.686
+  - 'models': 0.266
+  - 'with': 0.033
+
+Target token '<unk>' attends most to:
+  - 'models': 0.546
+  - 'for': 0.279
+  - 'with': 0.167
+
+Target token '<unk>' attends most to:
+  - 'with': 0.511
+  - 'models': 0.390
+  - 'for': 0.091
+
+Target token 'with' attends most to:
+  - 'with': 0.823
+  - 'models': 0.136
+  - 'for': 0.023
+
+Target token 'a' attends most to:
+  - 'with': 0.842
+  - 'a': 0.113
+  - 'models': 0.038
+
+Target token '<unk>' attends most to:
+  - 'a': 0.696
+  - 'with': 0.176
+  - 'custom': 0.125
+
+------------------------------------------------------------
+Most important source tokens overall:
+  - 'a': 0.494
+  - 'custom': 0.376
+  - 'with': 0.078
+  - 'for': 0.026
+  - 'models': 0.024
+
+================================================================================
+
+EXAMPLE 3
+================================================================================
+
+Docstring: Return a corresponding HSL color for this RGB color.
+
+        Returns:
+            :class:`~bokeh.colors.rgb.RGB`
+
+Reference Code: def to_hsl(self):
+        ''' Return a corresponding HSL color for this RGB color.
+
+        Returns:
+            :class:`~bokeh.colors.rgb.RGB`
+
+        '''
+        from .hsl import HSL # prevent circular import
+        h, l, s = colorsys.rgb_to_hls(float(self.r)/255, float(self.g)/255, float(self.b)/255)
+        return HSL(round(h*360), s, l, self.a)
+
+Generated Code: def <unk> <unk> """Return a <unk> corresponding <unk> for this <unk> this <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Source tokens: ['return', 'a', 'corresponding', '<unk>', 'color', 'for', 'this', 'rgb', '<unk>', 'returns:', '<unk>']
+
+Target tokens: ['def', '<unk>', '<unk>', '"""Return', 'a', '<unk>', 'corresponding', '<unk>', 'for', 'this', '<unk>', 'this', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>']
+
+Attention Pattern Analysis:
+------------------------------------------------------------
+
+Target token 'def' attends most to:
+  - 'a': 0.810
+  - 'corresponding': 0.147
+  - 'color': 0.038
+
+Target token '<unk>' attends most to:
+  - 'color': 0.458
+  - 'corresponding': 0.278
+  - 'for': 0.222
+
+Target token '<unk>' attends most to:
+  - 'a': 0.601
+  - 'corresponding': 0.300
+  - 'color': 0.074
+
+Target token '"""Return' attends most to:
+  - 'a': 0.986
+  - 'corresponding': 0.012
+  - 'return': 0.002
+
+Target token 'a' attends most to:
+  - 'a': 0.891
+  - 'corresponding': 0.101
+  - 'return': 0.006
+
+Target token '<unk>' attends most to:
+  - 'a': 0.539
+  - 'corresponding': 0.430
+  - 'color': 0.019
+
+Target token 'corresponding' attends most to:
+  - 'corresponding': 0.729
+  - 'color': 0.233
+  - 'for': 0.020
+
+Target token '<unk>' attends most to:
+  - 'color': 0.602
+  - 'corresponding': 0.283
+  - 'for': 0.110
+
+Target token 'for' attends most to:
+  - 'color': 0.499
+  - 'for': 0.425
+  - 'corresponding': 0.037
+
+Target token 'this' attends most to:
+  - 'for': 0.614
+  - 'this': 0.233
+  - 'color': 0.144
+
+------------------------------------------------------------
+Most important source tokens overall:
+  - 'this': 0.288
+  - 'rgb': 0.251
+  - 'for': 0.182
+  - 'color': 0.156
+  - 'corresponding': 0.065
+
+================================================================================
+
+EXAMPLE 4
+================================================================================
+
+Docstring: Outputs the last `num` elements that were appended either by `append` or
+        `append_multiple`.
+
+        Returns
+        -------
+        out : list
+
+Reference Code: def read_history(self, num=10, segment=0):
+        """
+        Outputs the last `num` elements that were appended either by `append` or
+        `append_multiple`.
+
+        Returns
+        -------
+        out : list
+
+        """
+        if num < 0:
+            num = 0
+        if segment < 0:
+            raise TypeError("segment must be >= 0")
+        return self._builder.read_history(num, segment)
+
+Generated Code: def <unk> """ """ the the last <unk> that that that by <unk> by <unk> <unk> <unk> <unk> Returns ------- out : <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Source tokens: ['outputs', 'the', 'last', '<unk>', 'elements', 'that', 'were', 'appended', 'either', 'by', '<unk>', 'or', '<unk>', 'returns', '-------', 'out', ':', 'list']
+
+Target tokens: ['def', '<unk>', '"""', '"""', 'the', 'the', 'last', '<unk>', 'that', 'that', 'that', 'by', '<unk>', 'by', '<unk>', '<unk>', '<unk>', '<unk>', 'Returns', '-------', 'out', ':', '<unk>', '"""', 'if', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>']
+
+Attention Pattern Analysis:
+------------------------------------------------------------
+
+Target token 'def' attends most to:
+  - 'that': 0.824
+  - 'by': 0.066
+  - 'elements': 0.047
+
+Target token '<unk>' attends most to:
+  - 'that': 0.754
+  - 'the': 0.146
+  - 'elements': 0.055
+
+Target token '"""' attends most to:
+  - 'the': 0.830
+  - 'last': 0.084
+  - 'that': 0.061
+
+Target token '"""' attends most to:
+  - 'the': 0.995
+  - 'last': 0.004
+  - 'that': 0.000
+
+Target token 'the' attends most to:
+  - 'the': 0.948
+  - 'last': 0.042
+  - 'outputs': 0.004
+
+Target token 'the' attends most to:
+  - 'the': 0.896
+  - 'last': 0.087
+  - 'that': 0.007
+
+Target token 'last' attends most to:
+  - 'last': 0.901
+  - 'the': 0.050
+  - 'that': 0.027
+
+Target token '<unk>' attends most to:
+  - 'last': 0.812
+  - 'that': 0.104
+  - 'elements': 0.053
+
+Target token 'that' attends most to:
+  - 'that': 0.667
+  - 'elements': 0.238
+  - 'last': 0.065
+
+Target token 'that' attends most to:
+  - 'that': 0.758
+  - 'elements': 0.172
+  - 'were': 0.063
+
+------------------------------------------------------------
+Most important source tokens overall:
+  - 'that': 0.159
+  - 'by': 0.128
+  - 'appended': 0.125
+  - 'returns': 0.115
+  - 'or': 0.111
+
+================================================================================
+
+EXAMPLE 5
+================================================================================
+
+Docstring: Decode a base64 encoded array into a NumPy array.
+
+    Args:
+        data (dict) : encoded array data to decode
+
+    Data should have the format encoded by :func:`encode_base64_dict`.
+
+    Returns:
+        np.ndarray
+
+Reference Code: def decode_base64_dict(data):
+    ''' Decode a base64 encoded array into a NumPy array.
+
+    Args:
+        data (dict) : encoded array data to decode
+
+    Data should have the format encoded by :func:`encode_base64_dict`.
+
+    Returns:
+        np.ndarray
+
+    '''
+    b64 = base64.b64decode(data['__ndarray__'])
+    array = np.copy(np.frombuffer(b64, dtype=data['dtype']))
+    if len(data['shape']) > 1:
+        array = array.reshape(data['shape'])
+    return array
+
+Generated Code: def <unk> <unk> <unk> a a array array into a numpy array data array data array data array data data data data data The data The data type <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Source tokens: ['decode', 'a', 'base64', 'encoded', 'array', 'into', 'a', 'numpy', 'array.', 'args:', 'data', '<unk>', ':', 'encoded', 'array', 'data', 'to', 'decode', 'data', 'should', 'have', 'the', 'format', 'encoded', 'by', '<unk>', 'returns:', 'np.ndarray']
+
+Target tokens: ['def', '<unk>', '<unk>', '<unk>', 'a', 'a', 'array', 'array', 'into', 'a', 'numpy', 'array', 'data', 'array', 'data', 'array', 'data', 'array', 'data', 'data', 'data', 'data', 'data', 'The', 'data', 'The', 'data', 'type', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>', '<unk>']
+
+Attention Pattern Analysis:
+------------------------------------------------------------
+
+Target token 'def' attends most to:
+  - 'a': 0.278
+  - 'numpy': 0.248
+  - 'array.': 0.181
+
+Target token '<unk>' attends most to:
+  - 'a': 0.387
+  - 'into': 0.312
+  - 'numpy': 0.237
+
+Target token '<unk>' attends most to:
+  - 'a': 0.421
+  - 'a': 0.181
+  - 'into': 0.178
+
+Target token '<unk>' attends most to:
+  - 'a': 0.993
+  - 'encoded': 0.002
+  - 'into': 0.002
+
+Target token 'a' attends most to:
+  - 'a': 0.989
+  - 'encoded': 0.005
+  - 'base64': 0.002
+
+Target token 'a' attends most to:
+  - 'a': 0.866
+  - 'encoded': 0.089
+  - 'base64': 0.022
+
+Target token 'array' attends most to:
+  - 'encoded': 0.681
+  - 'array': 0.196
+  - 'into': 0.077
+
+Target token 'array' attends most to:
+  - 'array': 0.414
+  - 'encoded': 0.281
+  - 'into': 0.242
+
+Target token 'into' attends most to:
+  - 'into': 0.446
+  - 'a': 0.231
+  - 'numpy': 0.149
+
+Target token 'a' attends most to:
+  - 'numpy': 0.463
+  - 'a': 0.256
+  - 'into': 0.153
+
+------------------------------------------------------------
+Most important source tokens overall:
+  - 'the': 0.202
+  - 'have': 0.164
+  - 'numpy': 0.089
+  - 'format': 0.064
+  - 'to': 0.049
+
+================================================================================
+

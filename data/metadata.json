@@ -1,0 +1,10 @@
+{
+  "max_docstring_len": 50,
+  "max_code_len": 80,
+  "train_size": 8000,
+  "val_size": 1000,
+  "test_size": 1000,
+  "src_vocab_size": 7134,
+  "tgt_vocab_size": 23130,
+  "min_freq": 2
+}

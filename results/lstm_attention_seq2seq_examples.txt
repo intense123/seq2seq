@@ -1,0 +1,184 @@
+Example 1:
+Source: Associate a namespace to a node, a posteriori.
+Reference: def <unk> node): """Associate a namespace to a node, a <unk> """ if node is None: <unk> = None else: <unk> = <unk> <unk> <unk>
+Prediction: def <unk> <unk> <unk> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 2:
+Source: Set (or reset) an attribute carried by a node. The ns
+           structure must be in scope, this is not checked
+Reference: def <unk> node, name, value): """Set (or <unk> an attribute carried by a node. The ns structure must be in scope, this is not checked """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name, value) if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+Prediction: def <unk> <unk> <unk> <unk> <unk> an attribute attribute <unk> a <unk> a <unk> a <unk> The attribute is not be in this is not in this is not <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 3:
+Source: Remove an attribute carried by a node.
+Reference: def <unk> node, name): """Remove an attribute carried by a node. """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name) return ret
+Prediction: def <unk> <unk> <unk> an an attribute <unk> by a node.""" <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 4:
+Source: Dump an HTML document.
+Reference: def <unk> cur, encoding, <unk> """Dump an HTML document. """ if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> encoding, format)
+Prediction: def <unk> <unk> <unk> an an HTML <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 5:
+Source: Dump an HTML document. Formating return/spaces are added.
+Reference: def <unk> cur, <unk> """Dump an HTML document. <unk> <unk> are added. """ if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk>
+Prediction: def <unk> <unk> <unk> an an HTML <unk> <unk> <unk> are are are <unk> are <unk> are <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 6:
+Source: Dump an HTML node, recursive behaviour,children are printed
+           too.
+Reference: def <unk> doc, cur, encoding, <unk> """Dump an HTML node, recursive <unk> are <unk> <unk> """ if doc is None: <unk> = None else: <unk> = <unk> if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk> encoding, format)
+Prediction: def <unk> <unk> <unk> an an HTML documentation <unk> <unk> <unk> are <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 7:
+Source: Dump an HTML node, recursive behaviour,children are printed
+           too, and formatting returns/spaces are added.
+Reference: def <unk> doc, cur, <unk> """Dump an HTML node, recursive <unk> are <unk> <unk> and formatting <unk> are added. """ if doc is None: <unk> = None else: <unk> = <unk> if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk> <unk>
+Prediction: def <unk> <unk> <unk> an <unk> <unk> <unk> <unk> <unk> <unk> are are <unk> are <unk> and <unk> are <unk> are are are are are are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk> are <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 8:
+Source: Dump an XML node, recursive behaviour, children are printed
+          too. Note that @format = 1 provide node indenting only if
+          xmlIndentTreeOutput = 1 or xmlKeepBlanksDefault(0) was
+           called
+Reference: def <unk> doc, cur, level, format, <unk> """Dump an XML node, recursive <unk> children are <unk> <unk> Note that <unk> = 1 provide node <unk> only if <unk> = 1 or <unk> was called """ if doc is None: <unk> = None else: <unk> = <unk> if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk> level, format, <unk>
+Prediction: def <unk> """ """ an an empty <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 9:
+Source: Dump an XML document to an I/O buffer. Warning ! This call
+          xmlOutputBufferClose() on buf which is not available after
+           this call.
+Reference: def <unk> cur, <unk> """Dump an XML document to an <unk> buffer. <unk> <unk> This call <unk> on buf which is not available after this call. """ if cur is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> <unk> return ret
+Prediction: def <unk> """ an an an <unk> to an an <unk> this <unk> <unk> on <unk> on this <unk> which is not <unk> """ if <unk> is not None: return <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 10:
+Source: Dump an XML document to an I/O buffer. Warning ! This call
+          xmlOutputBufferClose() on buf which is not available after
+           this call.
+Reference: def <unk> cur, encoding, <unk> """Dump an XML document to an <unk> buffer. <unk> <unk> This call <unk> on buf which is not available after this call. """ if cur is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> encoding, format) return ret
+Prediction: def <unk> """ an an an <unk> to an an <unk> this <unk> <unk> on <unk> on this <unk> which is not <unk> """ if <unk> is not None: return <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 11:
+Source: Write the content of the array in the output I/O buffer
+          This routine handle the I18N transcoding from internal
+          UTF-8 The buffer is lossless, i.e. will store in case of
+           partial or delayed writes.
+Reference: def write(self, len, buf): """Write the content of the array in the output <unk> buffer This routine handle the <unk> <unk> from internal UTF-8 The buffer is <unk> i.e. will store in case of partial or <unk> <unk> """ ret = <unk> len, <unk> return ret
+Prediction: def <unk> """ Write the content of the array in the output buffer This <unk> This <unk> <unk> the <unk> <unk> from the <unk> <unk> <unk> <unk> <unk> <unk> the in the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 12:
+Source: Write the content of the string in the output I/O buffer
+          This routine handle the I18N transcoding from internal
+          UTF-8 The buffer is lossless, i.e. will store in case of
+           partial or delayed writes.
+Reference: def <unk> str): """Write the content of the string in the output <unk> buffer This routine handle the <unk> <unk> from internal UTF-8 The buffer is <unk> i.e. will store in case of partial or <unk> <unk> """ ret = <unk> str) return ret
+Prediction: def <unk> <unk> """ Write the of the string in the output buffer This <unk> <unk> <unk> <unk> the <unk> <unk> <unk> from the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> the in the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 13:
+Source: Push the content of the arry in the input buffer This
+          routine handle the I18N transcoding to internal UTF-8 This
+          is used when operating the parser in progressive (push)
+           mode.
+Reference: def <unk> len, buf): """Push the content of the <unk> in the input buffer This routine handle the <unk> <unk> to internal UTF-8 This is used when operating the parser in <unk> <unk> mode. """ ret = <unk> len, <unk> return ret
+Prediction: def <unk> <unk> """ <unk> the of of the in the input input This allows you need to <unk> <unk> <unk> <unk> this <unk> this <unk> this <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 14:
+Source: Refresh the content of the input buffer, the old data are
+          considered consumed This routine handle the I18N
+           transcoding to internal UTF-8
+Reference: def read(self, <unk> """Refresh the content of the input buffer, the old data are considered <unk> This routine handle the <unk> <unk> to internal UTF-8 """ ret = <unk> <unk> return ret
+Prediction: def <unk> """ """ the the of the input input data to <unk> are <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 15:
+Source: Setup an XML reader with new options
+Reference: def <unk> <unk> URL, encoding, options): """Setup an XML reader with new options """ if reader is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> URL, encoding, options) return ret
+Prediction: def <unk> <unk> an an an empty new with new new new = <unk> <unk> = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 16:
+Source: Create an xmlTextReader structure fed with @input
+Reference: def <unk> <unk> """Create an <unk> structure <unk> with <unk> """ ret = <unk> <unk> if ret is <unk> <unk> failed') <unk> = <unk> <unk> = self return <unk>
+Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 17:
+Source: Check if the regular expression generates the value
+Reference: def <unk> content): """Check if the regular expression generates the value """ ret = <unk> <unk> return ret
+Prediction: def <unk> """Check if the if the if the is not if not <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 18:
+Source: parse a schema definition resource and build an internal
+           XML Shema struture which can be used to validate instances.
+Reference: def <unk> """parse a schema definition resource and build an internal XML <unk> <unk> which can be used to validate instances. """ ret = <unk> if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+Prediction: def <unk> """Parse a a resource and remove and <unk> an internal <unk> which can which can can be used to be used used to used used to <unk> used used to <unk> used used to be used used to <unk> used used to be used used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to be used to
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 19:
+Source: Semi private function used to pass informations to a parser
+           context which are a combination of xmlRelaxNGParserFlag .
+Reference: def <unk> <unk> <unk> private function used to pass <unk> to a parser context which are a combination of <unk> . """ ret = <unk> flags) return ret
+Prediction: def <unk> <unk> <unk> used used to to parse to a function that are <unk> are are <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+
+Example 20:
+Source: Create an XML RelaxNGs validation context based on the
+           given schema
+Reference: def <unk> """Create an XML <unk> validation context based on the given schema """ ret = <unk> if ret is <unk> <unk> failed') <unk> = <unk> <unk> = self return <unk>
+Prediction: def <unk> """Create an an <unk> <unk> <unk> <unk> <unk> on the given client. given <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+Match: False
+
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,258 @@
+ERROR ANALYSIS REPORT: lstm_seq2seq
+================================================================================
+
+Overall Statistics:
+  Total samples: 1000
+  Exact matches: 0 (0.00%)
+  Errors: 1000 (100.00%)
+
+================================================================================
+ERROR CATEGORIZATION
+================================================================================
+
+
+SYNTAX ERRORS:
+  Count: 1000
+
+  Examples (showing up to 3):
+
+  Example 1:
+    Source: Associate a namespace to a node, a posteriori.
+    Reference: def <unk> node): """Associate a namespace to a node, a <unk> """ if node is None: <unk> = None else: <unk> = <unk> <unk> <unk>
+    Prediction: def <unk> <unk> <unk> a a a a a a <unk> for a <unk> """ # <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Error: unterminated triple-quoted string literal (detected at line 1) (<unknown>, line 1)
+
+  Example 2:
+    Source: Set (or reset) an attribute carried by a node. The ns
+           structure must be in scope, this is not checked
+    Reference: def <unk> node, name, value): """Set (or <unk> an attribute carried by a node. The ns structure must be in scope, this is not checked """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name, value) if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+    Prediction: def <unk> <unk> """ Return an <unk> is a <unk> is a <unk> <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Error: invalid syntax (<unknown>, line 1)
+
+  Example 3:
+    Source: Remove an attribute carried by a node.
+    Reference: def <unk> node, name): """Remove an attribute carried by a node. """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name) return ret
+    Prediction: def <unk> <unk> """ Return a a from a <unk> """ """ = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Error: unterminated triple-quoted string literal (detected at line 1) (<unknown>, line 1)
+
+MISSING KEYWORDS:
+  Count: 850
+
+  Examples (showing up to 3):
+
+  Example 1:
+    Source: Associate a namespace to a node, a posteriori.
+    Reference: def <unk> node): """Associate a namespace to a node, a <unk> """ if node is None: <unk> = None else: <unk> = <unk> <unk> <unk>
+    Prediction: def <unk> <unk> <unk> a a a a a a <unk> for a <unk> """ # <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Missing keywords: ['if']
+
+  Example 2:
+    Source: Set (or reset) an attribute carried by a node. The ns
+           structure must be in scope, this is not checked
+    Reference: def <unk> node, name, value): """Set (or <unk> an attribute carried by a node. The ns structure must be in scope, this is not checked """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name, value) if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+    Prediction: def <unk> <unk> """ Return an <unk> is a <unk> is a <unk> <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Missing keywords: ['return']
+
+  Example 3:
+    Source: Remove an attribute carried by a node.
+    Reference: def <unk> node, name): """Remove an attribute carried by a node. """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name) return ret
+    Prediction: def <unk> <unk> """ Return a a from a <unk> """ """ = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+    Missing keywords: ['if', 'return']
+
+WRONG OPERATORS:
+  Count: 0
+
+INCOMPLETE CODE:
+  Count: 0
+
+EXTRA TOKENS:
+  Count: 863
+
+  Examples (showing up to 3):
+
+  Example 1:
+    Source: Associate a namespace to a node, a posteriori.
+    Reference: def <unk> node): """Associate a namespace to a node, a <unk> """ if node is None: <unk> = None else: <unk> = <unk> <unk> <unk>
+    Prediction: def <unk> <unk> <unk> a a a a a a <unk> for a <unk> """ # <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+  Example 2:
+    Source: Set (or reset) an attribute carried by a node. The ns
+           structure must be in scope, this is not checked
+    Reference: def <unk> node, name, value): """Set (or <unk> an attribute carried by a node. The ns structure must be in scope, this is not checked """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name, value) if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+    Prediction: def <unk> <unk> """ Return an <unk> is a <unk> is a <unk> <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+  Example 3:
+    Source: Remove an attribute carried by a node.
+    Reference: def <unk> node, name): """Remove an attribute carried by a node. """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name) return ret
+    Prediction: def <unk> <unk> """ Return a a from a <unk> """ """ = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+VARIABLE NAME ERRORS:
+  Count: 0
+
+INDENTATION ISSUES:
+  Count: 0
+
+================================================================================
+PERFORMANCE BY SOURCE LENGTH
+================================================================================
+
+
+Length bucket 0-10 tokens:
+  Total samples: 453
+  Correct: 0
+  Accuracy: 0.0000
+
+  Failure examples:
+
+    Example 1:
+      Source: Associate a namespace to a node, a posteriori.
+      Reference: def <unk> node): """Associate a namespace to a node, a <unk> """ if node is None: <unk> = None else: <unk> = <unk> <unk> <unk>
+      Prediction: def <unk> <unk> <unk> a a a a a a <unk> for a <unk> """ # <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 2:
+      Source: Remove an attribute carried by a node.
+      Reference: def <unk> node, name): """Remove an attribute carried by a node. """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name) return ret
+      Prediction: def <unk> <unk> """ Return a a from a <unk> """ """ = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 3:
+      Source: Dump an HTML document.
+      Reference: def <unk> cur, encoding, <unk> """Dump an HTML document. """ if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> encoding, format)
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if = <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Length bucket 11-20 tokens:
+  Total samples: 275
+  Correct: 0
+  Accuracy: 0.0000
+
+  Failure examples:
+
+    Example 1:
+      Source: Set (or reset) an attribute carried by a node. The ns
+           structure must be in scope, this is not checked
+      Reference: def <unk> node, name, value): """Set (or <unk> an attribute carried by a node. The ns structure must be in scope, this is not checked """ if node is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> name, value) if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+      Prediction: def <unk> <unk> """ Return an <unk> is a <unk> is a <unk> <unk> is <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 2:
+      Source: Dump an HTML node, recursive behaviour,children are printed
+           too, and formatting returns/spaces are added.
+      Reference: def <unk> doc, cur, <unk> """Dump an HTML node, recursive <unk> are <unk> <unk> and formatting <unk> are added. """ if doc is None: <unk> = None else: <unk> = <unk> if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk> <unk>
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 3:
+      Source: parse a schema definition resource and build an internal
+           XML Shema struture which can be used to validate instances.
+      Reference: def <unk> """parse a schema definition resource and build an internal XML <unk> <unk> which can be used to validate instances. """ ret = <unk> if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+      Prediction: def <unk> <unk> <unk> a a a to a a to a a and and <unk> and <unk> and <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Length bucket 21-30 tokens:
+  Total samples: 131
+  Correct: 0
+  Accuracy: 0.0000
+
+  Failure examples:
+
+    Example 1:
+      Source: Dump an XML node, recursive behaviour, children are printed
+          too. Note that @format = 1 provide node indenting only if
+          xmlIndentTreeOutput = 1 or xmlKeepBlanksDefault(0) was
+           called
+      Reference: def <unk> doc, cur, level, format, <unk> """Dump an XML node, recursive <unk> children are <unk> <unk> Note that <unk> = 1 provide node <unk> only if <unk> = 1 or <unk> was called """ if doc is None: <unk> = None else: <unk> = <unk> if cur is None: <unk> = None else: <unk> = <unk> <unk> <unk> <unk> level, format, <unk>
+      Prediction: def <unk> <unk> """ <unk> an <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 2:
+      Source: Dump an XML document to an I/O buffer. Warning ! This call
+          xmlOutputBufferClose() on buf which is not available after
+           this call.
+      Reference: def <unk> cur, <unk> """Dump an XML document to an <unk> buffer. <unk> <unk> This call <unk> on buf which is not available after this call. """ if cur is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> <unk> return ret
+      Prediction: def <unk> <unk> """ <unk> <unk> is <unk> <unk> <unk> is called to be called in <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 3:
+      Source: Dump an XML document to an I/O buffer. Warning ! This call
+          xmlOutputBufferClose() on buf which is not available after
+           this call.
+      Reference: def <unk> cur, encoding, <unk> """Dump an XML document to an <unk> buffer. <unk> <unk> This call <unk> on buf which is not available after this call. """ if cur is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> encoding, format) return ret
+      Prediction: def <unk> <unk> """ <unk> <unk> is <unk> <unk> <unk> is called to be called in <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Length bucket 31-40 tokens:
+  Total samples: 82
+  Correct: 0
+  Accuracy: 0.0000
+
+  Failure examples:
+
+    Example 1:
+      Source: Write the content of the array in the output I/O buffer
+          This routine handle the I18N transcoding from internal
+          UTF-8 The buffer is lossless, i.e. will store in case of
+           partial or delayed writes.
+      Reference: def write(self, len, buf): """Write the content of the array in the output <unk> buffer This routine handle the <unk> <unk> from internal UTF-8 The buffer is <unk> i.e. will store in case of partial or <unk> <unk> """ ret = <unk> len, <unk> return ret
+      Prediction: def <unk> <unk> <unk> <unk> the <unk> of the <unk> <unk> the <unk> <unk> <unk> the <unk> <unk> the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 2:
+      Source: Write the content of the string in the output I/O buffer
+          This routine handle the I18N transcoding from internal
+          UTF-8 The buffer is lossless, i.e. will store in case of
+           partial or delayed writes.
+      Reference: def <unk> str): """Write the content of the string in the output <unk> buffer This routine handle the <unk> <unk> from internal UTF-8 The buffer is <unk> i.e. will store in case of partial or <unk> <unk> """ ret = <unk> str) return ret
+      Prediction: def <unk> <unk> <unk> <unk> the the <unk> of the <unk> <unk> the <unk> <unk> <unk> the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 3:
+      Source: Use W3C XSD schema context to validate the document as it
+          is processed. Activation is only possible before the first
+          Read(). If @ctxt is None, then XML Schema validation is
+           deactivated.
+      Reference: def <unk> <unk> options): """Use W3C <unk> schema context to validate the document as it is processed. <unk> is only possible before the first <unk> If <unk> is None, then XML Schema validation is <unk> """ if reader is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> options) return ret
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+Length bucket 41+ tokens:
+  Total samples: 59
+  Correct: 0
+  Accuracy: 0.0000
+
+  Failure examples:
+
+    Example 1:
+      Source: Use RelaxNG to validate the document as it is processed.
+          Activation is only possible before the first Read(). if
+          @schema is None, then RelaxNG validation is desactivated. @
+          The @schema should not be freed until the reader is
+           deallocated or its use has been deactivated.
+      Reference: def <unk> <unk> """Use <unk> to validate the document as it is processed. <unk> is only possible before the first <unk> if <unk> is None, then <unk> validation is <unk> @ The <unk> should not be <unk> until the reader is <unk> or its use has been <unk> """ if reader is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> return ret
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> """ """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 2:
+      Source: Use XSD Schema to validate the document as it is processed.
+          Activation is only possible before the first Read(). if
+          @schema is None, then Schema validation is desactivated. @
+          The @schema should not be freed until the reader is
+           deallocated or its use has been deactivated.
+      Reference: def <unk> <unk> """Use <unk> Schema to validate the document as it is processed. <unk> is only possible before the first <unk> if <unk> is None, then Schema validation is <unk> @ The <unk> should not be <unk> until the reader is <unk> or its use has been <unk> """ if reader is None: <unk> = None else: <unk> = <unk> ret = <unk> <unk> return ret
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> the <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> the <unk> is not <unk> <unk> <unk> <unk> <unk> <unk> """ """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+    Example 3:
+      Source: Hacking interface allowing to get the xmlDocPtr
+          correponding to the current document being accessed by the
+          xmlTextReader. NOTE: as a result of this call, the reader
+          will not destroy the associated XML document and calling
+          xmlFreeDoc() on the result is needed once the reader
+           parsing has finished.
+      Reference: def <unk> <unk> interface allowing to get the <unk> <unk> to the current document being accessed by the <unk> NOTE: as a result of this call, the reader will not <unk> the associated XML document and calling <unk> on the result is needed once the reader parsing has finished. """ ret = <unk> if ret is <unk> <unk> failed') <unk> = <unk> return <unk>
+      Prediction: def <unk> <unk> <unk> <unk> <unk> <unk> the the the the the the the the the the the the the the the the the the is not <unk> the <unk> is not to be used to the the <unk> <unk> the the <unk> is not to the the <unk> """ """ if <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+
+================================================================================
+COMMON PATTERNS
+================================================================================
+
+Success-associated tokens (appear in correct predictions):
+
+Failure-associated tokens (appear in incorrect predictions):
+  returns: 180
+  this: 155
+  args:: 104
+  with: 96
+  returns:: 94
+  from: 93
+  given: 93
+  that: 90
+  return: 88
+  :param: 88
