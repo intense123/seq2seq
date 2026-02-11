@@ -92,9 +92,10 @@ All components have been successfully implemented, trained, evaluated, and docum
   - Results saved: `evaluation_results.json`
 
 - [x] **Performance Analysis**
-  - By sequence length
+  - By code sequence length
+  - By docstring sequence length (NEW!)
   - By error type
-  - Model comparison
+  - Model comparison with comprehensive tables
 
 - [x] **Example Predictions**
   - 20 examples per model
@@ -177,6 +178,16 @@ All components have been successfully implemented, trained, evaluated, and docum
 - Test: 1,000 samples
 - Source vocab: 7,134 tokens
 - Target vocab: 23,130 tokens
+
+### Evaluation Features
+
+- Token-level accuracy
+- Exact match accuracy
+- BLEU scores (1-4 and corpus)
+- Performance by code length (5 buckets)
+- **Performance by docstring length (5 buckets)** ⭐ NEW!
+- Error categorization
+- Attention visualization
 
 ---
 

@@ -2,12 +2,34 @@
 
 This project implements and compares three sequence-to-sequence models for translating English docstrings into Python code.
 
+## Quick Start
+
+```bash
+# Clone and setup
+git clone https://github.com/intense123/seq2seq.git
+cd seq2seq
+pip install -r requirements.txt
+python3 -c "import nltk; nltk.download('punkt')"
+
+# Prepare data
+python3 -c "from data.preprocess import prepare_data; prepare_data()"
+
+# Train all models
+python3 train.py --model all --num_epochs 10
+
+# Evaluate
+python3 evaluate.py --model all
+
+# Visualize attention
+python3 visualize_attention.py --num_examples 5
+```
+
 ## Overview
 
 The system translates natural language descriptions (docstrings) into functional Python code using:
-1. **Vanilla RNN Seq2Seq** (Baseline)
-2. **LSTM Seq2Seq** (Improved)
-3. **LSTM with Bahdanau Attention** (Best)
+1. **Vanilla RNN Seq2Seq** (Baseline) - BLEU-4: 0.0314
+2. **LSTM Seq2Seq** (Improved) - BLEU-4: 0.0408 (+30%)
+3. **LSTM with Bahdanau Attention** (Best) - BLEU-4: 0.0623 (+98%)
 
 ## Project Structure
 
@@ -35,35 +57,42 @@ text2code/
 
 ## Installation
 
-1. Create a virtual environment (recommended):
+1. Clone the repository:
 ```bash
-python -m venv venv
+git clone https://github.com/intense123/seq2seq.git
+cd seq2seq
+```
+
+2. Create a virtual environment (recommended):
+```bash
+python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download NLTK data (for BLEU score):
+4. Download NLTK data (for BLEU score):
 ```bash
-python -c "import nltk; nltk.download('punkt')"
+python3 -c "import nltk; nltk.download('punkt')"
 ```
 
 ## Usage
+
+**Note:** All commands should be run from the repository root directory.
 
 ### Step 1: Prepare Data
 
 Download and preprocess the CodeSearchNet Python dataset:
 
 ```bash
-cd text2code
-python -c "from data.preprocess import prepare_data; prepare_data()"
+python3 -c "from data.preprocess import prepare_data; prepare_data()"
 ```
 
 This will:
-- Download the CodeSearchNet dataset
+- Download the CodeSearchNet dataset from Hugging Face
 - Filter samples by length constraints (docstring ≤ 50 tokens, code ≤ 80 tokens)
 - Create train/val/test splits (8000/1000/1000 samples)
 - Build vocabularies
@@ -74,20 +103,20 @@ This will:
 Train all three models:
 
 ```bash
-python train.py --model all --num_epochs 20
+python3 train.py --model all --num_epochs 20
 ```
 
 Or train individual models:
 
 ```bash
 # Train only RNN
-python train.py --model rnn --num_epochs 20
+python3 train.py --model rnn --num_epochs 20
 
 # Train only LSTM
-python train.py --model lstm --num_epochs 20
+python3 train.py --model lstm --num_epochs 20
 
 # Train only Attention
-python train.py --model attention --num_epochs 20
+python3 train.py --model attention --num_epochs 20
 ```
 
 **Training Options:**
@@ -104,7 +133,7 @@ python train.py --model attention --num_epochs 20
 Evaluate all trained models on the test set:
 
 ```bash
-python evaluate.py --model all
+python3 evaluate.py --model all
 ```
 
 This computes:
@@ -112,19 +141,28 @@ This computes:
 - **Exact match accuracy**: Proportion of perfectly matched sequences
 - **BLEU scores**: BLEU-1, BLEU-2, BLEU-3, BLEU-4, and corpus BLEU
 - **Performance by sequence length**: Analysis across different length ranges
+- **Performance by docstring length**: Analysis by source sequence length
 
 ### Step 4: Visualize Attention
 
 Generate attention heatmaps for the LSTM with Attention model:
 
 ```bash
-python visualize_attention.py --num_examples 5
+python3 visualize_attention.py --num_examples 5
 ```
 
 This creates:
 - Attention heatmaps showing alignment between source and target tokens
 - Analysis of attention patterns
 - Interpretation of which source tokens influence target generation
+
+### Step 5: Error Analysis (Optional)
+
+Run detailed error analysis:
+
+```bash
+python3 error_analysis.py --model all
+```
 
 ## Model Architectures
 
@@ -232,17 +270,23 @@ python train.py --seed 42
 ## Troubleshooting
 
 **Out of Memory (OOM)**:
-- Reduce batch size: `--batch_size 16`
-- Reduce model size: `--hidden_dim 128 --embed_dim 128`
+```bash
+python3 train.py --model all --batch_size 16
+```
 
 **Slow Training**:
 - Use GPU if available (automatically detected)
-- Reduce dataset size in `data/preprocess.py`
+- Reduce dataset size by modifying `train_size` in data preparation
 
 **Poor Results**:
-- Increase training epochs: `--num_epochs 30`
-- Adjust learning rate: `--learning_rate 0.0005`
-- Increase model capacity: `--hidden_dim 512 --num_layers 2`
+```bash
+python3 train.py --model all --num_epochs 30 --learning_rate 0.0005
+```
+
+**Module Not Found Errors**:
+- Make sure you're in the repository root directory
+- Activate your virtual environment
+- Reinstall dependencies: `pip install -r requirements.txt`
 
 ## Citation
 

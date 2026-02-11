@@ -153,7 +153,7 @@ def generate_predictions(
     tgt_vocab: Vocabulary,
     max_len: int = 100,
     model_type: str = 'rnn'
-) -> Tuple[List[List[int]], List[List[int]], List[List[str]], List[List[str]]]:
+) -> Tuple[List[List[int]], List[List[int]], List[List[str]], List[List[str]], List[int]]:
     """
     Generate predictions for entire dataset.
     
@@ -170,6 +170,7 @@ def generate_predictions(
         ref_indices: List of reference token index sequences
         pred_tokens: List of predicted token string sequences
         ref_tokens: List of reference token string sequences
+        src_lengths_list: List of source (docstring) lengths
     """
     model.eval()
     
@@ -177,6 +178,7 @@ def generate_predictions(
     ref_indices = []
     pred_tokens = []
     ref_tokens = []
+    src_lengths_list = []
     
     with torch.no_grad():
         for src, tgt, src_lengths, tgt_lengths in tqdm(dataloader, desc="Generating predictions"):
@@ -192,14 +194,16 @@ def generate_predictions(
             # Convert to lists
             generated = generated.cpu().numpy()
             tgt = tgt.cpu().numpy()
+            src_lengths_cpu = src_lengths.cpu().numpy()
             
-            for gen, ref in zip(generated, tgt):
+            for gen, ref, src_len in zip(generated, tgt, src_lengths_cpu):
                 # Store indices (without special tokens for reference)
                 gen_list = gen.tolist()
                 ref_list = ref.tolist()
                 
                 pred_indices.append(gen_list)
                 ref_indices.append(ref_list)
+                src_lengths_list.append(int(src_len))
                 
                 # Decode to tokens
                 gen_tokens = decode_sequence(gen_list, tgt_vocab)
@@ -208,7 +212,7 @@ def generate_predictions(
                 pred_tokens.append(gen_tokens)
                 ref_tokens.append(ref_tokens_seq)
     
-    return pred_indices, ref_indices, pred_tokens, ref_tokens
+    return pred_indices, ref_indices, pred_tokens, ref_tokens, src_lengths_list
 
 
 def analyze_by_length(
@@ -273,6 +277,68 @@ def analyze_by_length(
     return results
 
 
+def analyze_by_docstring_length(
+    pred_indices: List[List[int]],
+    ref_indices: List[List[int]],
+    pred_tokens: List[List[str]],
+    ref_tokens: List[List[str]],
+    src_lengths: List[int]
+) -> Dict:
+    """
+    Analyze performance by source (docstring) sequence length.
+    
+    Args:
+        pred_indices: Predicted token indices
+        ref_indices: Reference token indices
+        pred_tokens: Predicted tokens
+        ref_tokens: Reference tokens
+        src_lengths: Source sequence lengths
+    
+    Returns:
+        Dictionary with performance metrics by docstring length range
+    """
+    # Group by docstring length ranges
+    length_ranges = [
+        (0, 10),
+        (10, 20),
+        (20, 30),
+        (30, 40),
+        (40, 50)
+    ]
+    
+    grouped_data = defaultdict(lambda: {'pred_idx': [], 'ref_idx': [], 'pred_tok': [], 'ref_tok': []})
+    
+    for pred_idx, ref_idx, pred_tok, ref_tok, src_len in zip(pred_indices, ref_indices, pred_tokens, ref_tokens, src_lengths):
+        for min_len, max_len in length_ranges:
+            if min_len <= src_len < max_len:
+                grouped_data[(min_len, max_len)]['pred_idx'].append(pred_idx)
+                grouped_data[(min_len, max_len)]['ref_idx'].append(ref_idx)
+                grouped_data[(min_len, max_len)]['pred_tok'].append(pred_tok)
+                grouped_data[(min_len, max_len)]['ref_tok'].append(ref_tok)
+                break
+    
+    # Calculate metrics for each length range
+    results = {}
+    for (min_len, max_len), data in grouped_data.items():
+        if not data['pred_idx']:
+            continue
+        
+        range_name = f'{min_len}-{max_len}'
+        
+        token_acc = calculate_token_accuracy(data['pred_idx'], data['ref_idx'])
+        exact_match = calculate_exact_match(data['pred_idx'], data['ref_idx'])
+        bleu_scores = calculate_bleu(data['pred_tok'], data['ref_tok'])
+        
+        results[range_name] = {
+            'num_samples': len(data['pred_idx']),
+            'token_accuracy': token_acc,
+            'exact_match': exact_match,
+            'bleu_4': bleu_scores['bleu_4']
+        }
+    
+    return results
+
+
 def evaluate_model(
     model,
     test_loader,
@@ -298,7 +364,7 @@ def evaluate_model(
     print(f'\nEvaluating {model_name}...')
     
     # Generate predictions
-    pred_indices, ref_indices, pred_tokens, ref_tokens = generate_predictions(
+    pred_indices, ref_indices, pred_tokens, ref_tokens, src_lengths = generate_predictions(
         model, test_loader, device, tgt_vocab, max_len=100, model_type=model_type
     )
     
@@ -309,12 +375,14 @@ def evaluate_model(
     exact_match = calculate_exact_match(pred_indices, ref_indices)
     bleu_scores = calculate_bleu(pred_tokens, ref_tokens)
     length_analysis = analyze_by_length(pred_indices, ref_indices, pred_tokens, ref_tokens)
+    docstring_length_analysis = analyze_by_docstring_length(pred_indices, ref_indices, pred_tokens, ref_tokens, src_lengths)
     
     results = {
         'token_accuracy': token_acc,
         'exact_match': exact_match,
         'bleu_scores': bleu_scores,
-        'length_analysis': length_analysis
+        'length_analysis': length_analysis,
+        'docstring_length_analysis': docstring_length_analysis
     }
     
     # Print results
@@ -327,8 +395,15 @@ def evaluate_model(
     print(f'  BLEU-4: {bleu_scores["bleu_4"]:.4f}')
     print(f'  Corpus BLEU: {bleu_scores["corpus_bleu"]:.4f}')
     
-    print('\nPerformance by sequence length:')
+    print('\nPerformance by code sequence length:')
     for range_name, metrics in sorted(length_analysis.items()):
+        print(f'  {range_name}: {metrics["num_samples"]} samples, '
+              f'Token Acc: {metrics["token_accuracy"]:.4f}, '
+              f'Exact Match: {metrics["exact_match"]:.4f}, '
+              f'BLEU-4: {metrics["bleu_4"]:.4f}')
+    
+    print('\nPerformance by docstring length:')
+    for range_name, metrics in sorted(docstring_length_analysis.items()):
         print(f'  {range_name}: {metrics["num_samples"]} samples, '
               f'Token Acc: {metrics["token_accuracy"]:.4f}, '
               f'Exact Match: {metrics["exact_match"]:.4f}, '
@@ -478,14 +553,35 @@ def main():
     print(f'\nEvaluation complete! Results saved to {results_path}')
     
     # Print comparison
-    print('\n' + '='*60)
+    print('\n' + '='*80)
     print('EVALUATION SUMMARY')
-    print('='*60)
+    print('='*80)
     print(f'{"Model":<30} {"Token Acc":<12} {"Exact Match":<12} {"BLEU-4":<12}')
-    print('-'*60)
+    print('-'*80)
     for model_name, results in all_results.items():
         print(f'{model_name:<30} {results["token_accuracy"]:<12.4f} '
               f'{results["exact_match"]:<12.4f} {results["bleu_scores"]["bleu_4"]:<12.4f}')
+    
+    # Print docstring length analysis comparison
+    print('\n' + '='*80)
+    print('PERFORMANCE BY DOCSTRING LENGTH')
+    print('='*80)
+    
+    # Get all docstring length ranges
+    if all_results:
+        first_model = list(all_results.values())[0]
+        if 'docstring_length_analysis' in first_model:
+            doc_ranges = sorted(first_model['docstring_length_analysis'].keys())
+            
+            for doc_range in doc_ranges:
+                print(f'\nDocstring Length {doc_range} tokens:')
+                print(f'{"Model":<30} {"Samples":<10} {"Token Acc":<12} {"BLEU-4":<12}')
+                print('-'*80)
+                for model_name, results in all_results.items():
+                    if doc_range in results.get('docstring_length_analysis', {}):
+                        metrics = results['docstring_length_analysis'][doc_range]
+                        print(f'{model_name:<30} {metrics["num_samples"]:<10} '
+                              f'{metrics["token_accuracy"]:<12.4f} {metrics["bleu_4"]:<12.4f}')
 
 
 if __name__ == '__main__':
